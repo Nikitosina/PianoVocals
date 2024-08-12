@@ -11,6 +11,9 @@
 		461DF6552C690C2700D8D117 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461DF6542C690C2700D8D117 /* ContentView.swift */; };
 		461DF6572C690C2900D8D117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461DF6562C690C2900D8D117 /* Assets.xcassets */; };
 		461DF65A2C690C2900D8D117 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461DF6592C690C2900D8D117 /* Preview Assets.xcassets */; };
+		461DF6612C690C6F00D8D117 /* PianoSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461DF6602C690C6F00D8D117 /* PianoSound.swift */; };
+		461DF6632C69850600D8D117 /* emuaps_8mb.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 461DF6622C69850600D8D117 /* emuaps_8mb.sf2 */; };
+		461DF6652C6985AB00D8D117 /* PianoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461DF6642C6985A500D8D117 /* PianoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		461DF6542C690C2700D8D117 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		461DF6562C690C2900D8D117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		461DF6592C690C2900D8D117 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		461DF6602C690C6F00D8D117 /* PianoSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoSound.swift; sourceTree = "<group>"; };
+		461DF6622C69850600D8D117 /* emuaps_8mb.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = emuaps_8mb.sf2; sourceTree = "<group>"; };
+		461DF6642C6985A500D8D117 /* PianoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,9 @@
 		461DF6512C690C2700D8D117 /* PianoVocals */ = {
 			isa = PBXGroup;
 			children = (
+				461DF6642C6985A500D8D117 /* PianoViewModel.swift */,
+				461DF6622C69850600D8D117 /* emuaps_8mb.sf2 */,
+				461DF6602C690C6F00D8D117 /* PianoSound.swift */,
 				461DF6522C690C2700D8D117 /* PianoVocalsApp.swift */,
 				461DF6542C690C2700D8D117 /* ContentView.swift */,
 				461DF6562C690C2900D8D117 /* Assets.xcassets */,
@@ -111,6 +120,9 @@
 				Base,
 			);
 			mainGroup = 461DF6462C690C2700D8D117;
+			packageReferences = (
+				461DF6662C69B82E00D8D117 /* XCRemoteSwiftPackageReference "Beethoven" */,
+			);
 			productRefGroup = 461DF6502C690C2700D8D117 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				461DF65A2C690C2900D8D117 /* Preview Assets.xcassets in Resources */,
+				461DF6632C69850600D8D117 /* emuaps_8mb.sf2 in Resources */,
 				461DF6572C690C2900D8D117 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				461DF6612C690C6F00D8D117 /* PianoSound.swift in Sources */,
 				461DF6552C690C2700D8D117 /* ContentView.swift in Sources */,
+				461DF6652C6985AB00D8D117 /* PianoViewModel.swift in Sources */,
 				461DF6532C690C2700D8D117 /* PianoVocalsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +359,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		461DF6662C69B82E00D8D117 /* XCRemoteSwiftPackageReference "Beethoven" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vadymmarkov/Beethoven.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 461DF6472C690C2700D8D117 /* Project object */;
 }
