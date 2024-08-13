@@ -6,11 +6,27 @@
 //
 
 import Foundation
+import Pitchy1
+import Beethoven_iOS
 
 final class PianoViewModel: ObservableObject {
     private struct Constants {
         static let whiteIndexesInOctave = [0, 2, 4, 5, 7, 9, 11]
         static let blackIndexesInOctave = [1, 3, 6, 8, 10]
+        static let letters: [Pitchy1.Note.Letter] = [
+            .C,
+            .CSharp,
+            .D,
+            .DSharp,
+            .E,
+            .F,
+            .FSharp,
+            .G,
+            .GSharp,
+            .A,
+            .ASharp,
+            .B
+        ]
     }
 
     @Published var allKeys: [KeyInfo] = {
@@ -26,11 +42,24 @@ final class PianoViewModel: ObservableObject {
         return result
     }()
     @Published var scrollDisabled = true
-
-    lazy var whiteKeys: [KeyInfo] = allKeys.filter { $0.color == .white }
-    lazy var blackKeys: [KeyInfo] = allKeys.filter { $0.color == .black }
+    @Published var pitchDetectionMode = false {
+        didSet {
+            if pitchDetectionMode {
+                pitchDetector.start()
+            } else {
+                pitchDetector.stop()
+                highlightedNote = nil
+            }
+            restartAudioEngine()
+        }
+    }
+    @Published var highlightedNote: Note? = nil
 
     private let sound = PianoSound()
+    private lazy var pitchDetector = PitchDetector(onPitchReceived: { [weak self] in
+        guard let self else { return }
+        highlightedNote = Note(octave: $0.octave + 1, letter: $0.letter.rawValue, keyNumber: noteToKey($0))
+    })
 
     func whiteKeyIndex(octave: Int, i: Int) -> Int {
         return (octave * 12) + Constants.whiteIndexesInOctave[i]
@@ -51,4 +80,23 @@ final class PianoViewModel: ObservableObject {
         sound.stop(keyInfo: allKeys[i])
         allKeys[i].isPressed = false
     }
+
+    func restartAudioEngine() {
+        sound.restartAudioEngine()
+    }
+
+    private func noteToKey(_ note: Pitchy1.Note) -> Int {
+        (note.octave + 1) * 12 + note.letter.keyNumber
+    }
+
+    func numberToNote(_ number: Int) -> Note {
+        let noteLetter = Constants.letters[number % 12]
+        return Note(octave: number / 12, letter: noteLetter.rawValue, keyNumber: number)
+    }
+}
+
+struct Note {
+    var octave: Int
+    var letter: String
+    var keyNumber: Int
 }

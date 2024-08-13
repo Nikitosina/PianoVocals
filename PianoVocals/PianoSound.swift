@@ -13,12 +13,8 @@ class PianoSound {
 
     private let audioEngine = AVAudioEngine()
     private let unitSampler = AVAudioUnitSampler()
-    private var whiteNotes = [UInt8]()
-    private var blackNotes = [UInt8]()
 
-    init(volume: Float = 0.5) {
-        whiteNotes = makeWhiteNotes(14)
-        blackNotes = mekeBlackNotes(13)
+    init(volume: Float = 1) {
         audioEngine.mainMixerNode.volume = volume
         audioEngine.attach(unitSampler)
         audioEngine.connect(unitSampler, to: audioEngine.mainMixerNode, format: nil)
@@ -73,34 +69,20 @@ class PianoSound {
         }
     }
 
-    private func convert(keyInfo: KeyInfo) -> UInt8 {
-        if keyInfo.color == .white {
-            return UInt8(whiteNotes[keyInfo.n])
-        } else {
-            return UInt8(blackNotes[keyInfo.n])
-        }
-    }
-
     func play(keyInfo: KeyInfo) {
         let note = UInt8(keyInfo.n)
-        self.unitSampler.startNote(note, withVelocity: 80, onChannel: 0)
+        self.unitSampler.startNote(note, withVelocity: 127, onChannel: 0)
     }
 
-//    func fadeOut(note: UInt8, pressure: UInt8 = 80) {
-//        if 0 < pressure {
-//            self.unitSampler.sendPressure(forKey: note, withValue: pressure - 10, onChannel: 0)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-//                self.fadeOut(note: note, pressure: pressure - 10)
-//            }
-//        } else {
-//            self.unitSampler.stopNote(note, onChannel: 0)
-//        }
-//    }
-
     func stop(keyInfo: KeyInfo) {
-//        let note = convert(keyInfo: keyInfo)
         let note = UInt8(keyInfo.n)
         self.unitSampler.stopNote(note, onChannel: 0)
+    }
+
+    func restartAudioEngine() {
+        if let _ = try? audioEngine.start() {
+            loadSoundFont()
+        }
     }
 
 }

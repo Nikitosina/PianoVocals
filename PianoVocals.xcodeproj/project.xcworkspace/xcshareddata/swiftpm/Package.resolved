@@ -1,0 +1,15 @@
+{
+  "originHash" : "95ba6f34d5867d9299cfcd2c7ec29909df96c614438be5c2ffae431483ac225f",
+  "pins" : [
+    {
+      "identity" : "pitchy1",
+      "kind" : "localSourceControl",
+      "location" : "/Users/nikitarat/Projects/PianoVocals/Beethoven/Pitchy1",
+      "state" : {
+        "revision" : "3765b39818583420a4fc30e39d3b33609032ebac",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -14,6 +14,9 @@
 		461DF6612C690C6F00D8D117 /* PianoSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461DF6602C690C6F00D8D117 /* PianoSound.swift */; };
 		461DF6632C69850600D8D117 /* emuaps_8mb.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 461DF6622C69850600D8D117 /* emuaps_8mb.sf2 */; };
 		461DF6652C6985AB00D8D117 /* PianoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461DF6642C6985A500D8D117 /* PianoViewModel.swift */; };
+		46BE99A22C69D41500A3D584 /* Beethoven in Frameworks */ = {isa = PBXBuildFile; productRef = 46BE99A12C69D41500A3D584 /* Beethoven */; };
+		46BE99A42C69F47400A3D584 /* PitchDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE99A32C69F46F00A3D584 /* PitchDetector.swift */; };
+		46BE99A62C6AE84100A3D584 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE99A52C6AE83D00A3D584 /* KeyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,8 @@
 		461DF6602C690C6F00D8D117 /* PianoSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoSound.swift; sourceTree = "<group>"; };
 		461DF6622C69850600D8D117 /* emuaps_8mb.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = emuaps_8mb.sf2; sourceTree = "<group>"; };
 		461DF6642C6985A500D8D117 /* PianoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoViewModel.swift; sourceTree = "<group>"; };
+		46BE99A32C69F46F00A3D584 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
+		46BE99A52C6AE83D00A3D584 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BE99A22C69D41500A3D584 /* Beethoven in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,8 @@
 		461DF6512C690C2700D8D117 /* PianoVocals */ = {
 			isa = PBXGroup;
 			children = (
+				46BE99A52C6AE83D00A3D584 /* KeyView.swift */,
+				46BE99A32C69F46F00A3D584 /* PitchDetector.swift */,
 				461DF6642C6985A500D8D117 /* PianoViewModel.swift */,
 				461DF6622C69850600D8D117 /* emuaps_8mb.sf2 */,
 				461DF6602C690C6F00D8D117 /* PianoSound.swift */,
@@ -121,7 +129,7 @@
 			);
 			mainGroup = 461DF6462C690C2700D8D117;
 			packageReferences = (
-				461DF6662C69B82E00D8D117 /* XCRemoteSwiftPackageReference "Beethoven" */,
+				46BE99A02C69D41500A3D584 /* XCLocalSwiftPackageReference "Beethoven" */,
 			);
 			productRefGroup = 461DF6502C690C2700D8D117 /* Products */;
 			projectDirPath = "";
@@ -150,7 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BE99A42C69F47400A3D584 /* PitchDetector.swift in Sources */,
 				461DF6612C690C6F00D8D117 /* PianoSound.swift in Sources */,
+				46BE99A62C6AE84100A3D584 /* KeyView.swift in Sources */,
 				461DF6552C690C2700D8D117 /* ContentView.swift in Sources */,
 				461DF6652C6985AB00D8D117 /* PianoViewModel.swift in Sources */,
 				461DF6532C690C2700D8D117 /* PianoVocalsApp.swift in Sources */,
@@ -287,20 +297,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PianoVocals/Preview Content\"";
-				DEVELOPMENT_TEAM = 3N9U5MAV96;
+				DEVELOPMENT_TEAM = WPVJY5G9UM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Piano Voc";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give access to microphone to detect note pitch";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikitarat.PianoVocals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikitarat.PianoVoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -316,20 +330,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PianoVocals/Preview Content\"";
-				DEVELOPMENT_TEAM = 3N9U5MAV96;
+				DEVELOPMENT_TEAM = WPVJY5G9UM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Piano Voc";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give access to microphone to detect note pitch";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nikitarat.PianoVocals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikitarat.PianoVoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -360,16 +378,19 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		461DF6662C69B82E00D8D117 /* XCRemoteSwiftPackageReference "Beethoven" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vadymmarkov/Beethoven.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		46BE99A02C69D41500A3D584 /* XCLocalSwiftPackageReference "Beethoven" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Beethoven;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		46BE99A12C69D41500A3D584 /* Beethoven */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Beethoven;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 461DF6472C690C2700D8D117 /* Project object */;
 }
