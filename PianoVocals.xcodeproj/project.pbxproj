@@ -28,6 +28,7 @@
 		461DF6602C690C6F00D8D117 /* PianoSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoSound.swift; sourceTree = "<group>"; };
 		461DF6622C69850600D8D117 /* emuaps_8mb.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = emuaps_8mb.sf2; sourceTree = "<group>"; };
 		461DF6642C6985A500D8D117 /* PianoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoViewModel.swift; sourceTree = "<group>"; };
+		4639AE452C6ED83700E4A022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		46BE99A32C69F46F00A3D584 /* PitchDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchDetector.swift; sourceTree = "<group>"; };
 		46BE99A52C6AE83D00A3D584 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +64,7 @@
 		461DF6512C690C2700D8D117 /* PianoVocals */ = {
 			isa = PBXGroup;
 			children = (
+				4639AE452C6ED83700E4A022 /* Info.plist */,
 				46BE99A52C6AE83D00A3D584 /* KeyView.swift */,
 				46BE99A32C69F46F00A3D584 /* PitchDetector.swift */,
 				461DF6642C6985A500D8D117 /* PianoViewModel.swift */,
@@ -300,8 +302,10 @@
 				DEVELOPMENT_TEAM = WPVJY5G9UM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PianoVocals/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Piano Voc";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app does not need access to the camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give access to microphone to detect note pitch";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -333,8 +337,10 @@
 				DEVELOPMENT_TEAM = WPVJY5G9UM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PianoVocals/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Piano Voc";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The app does not need access to the camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give access to microphone to detect note pitch";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
